@@ -118,7 +118,7 @@ fun HomeScreen() {
                 }
             }
         }
-    ) { contentPadding ->
+    ) {
         Column(Modifier.verticalScroll(rememberScrollState())) {
             SearchComponent(Modifier.padding(top = 56.dp, start = 16.dp, end = 16.dp))
             FavoriteCollections(
