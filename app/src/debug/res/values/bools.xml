@@ -21,6 +21,5 @@
   -->
 
 <resources>
-    <bool name="light_status_bar">true</bool>
-    <bool name="debug_show_grid">false</bool>
+    <bool name="debug_show_grid">true</bool>
 </resources>

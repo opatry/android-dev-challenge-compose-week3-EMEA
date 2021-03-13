@@ -33,6 +33,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.booleanResource
 import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
@@ -76,7 +77,7 @@ fun MySootheApp() {
                 }
                 AppState.Home -> HomeScreen()
             }
-            val showGrid = true // TODO booleanResource(id = R.bool.is_debug)
+            val showGrid = booleanResource(R.bool.debug_show_grid)
             if (showGrid) {
                 GridLayer()
             }
