@@ -23,7 +23,13 @@ package net.opatry.speedrun.emea.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val purple200 = Color(0xFFBB86FC)
-val purple500 = Color(0xFF6200EE)
-val purple700 = Color(0xFF3700B3)
-val teal200 = Color(0xFF03DAC5)
+val Gray900 = Color(0xFF333333)
+val Gray800 = Gray900.copy(alpha = .8f)
+val Rust600 = Color(0xFF886363)
+val Rust300 = Color(0xFFE1AFAF)
+val Taupe100 = Color(0xFFF0EAE2)
+val Taupe800 = Color(0xFF655454)
+val White150 = Color.White.copy(alpha = .15f)
+val White800 = Color.White.copy(alpha = .8f)
+val White850 = Color.White.copy(alpha = .85f)
+

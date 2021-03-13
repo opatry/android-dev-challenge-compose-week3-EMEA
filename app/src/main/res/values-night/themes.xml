@@ -31,18 +31,17 @@
       or implied. See the License for the specific language governing permissions and limitations under
       the License.
       -->
-    <!-- Base application theme. -->
-    <style name="Theme.AndroidDevChallenge" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+    <style name="Theme.MySoothe" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/White</item>
+        <item name="colorPrimaryVariant">@color/White</item>
+        <item name="colorOnPrimary">@color/Gray900</item>
+        <item name="colorSecondary">@color/Rust300</item>
+        <item name="colorSecondaryVariant">@color/Rust300</item>
+        <item name="colorOnSecondary">@color/Gray900</item>
+        <item name="colorOnBackground">@color/Taupe100</item>
+        <item name="colorOnSurface">@color/White800</item>
+        <item name="colorSurface">@color/White150</item>
+<!--        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>-->
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 </resources>
