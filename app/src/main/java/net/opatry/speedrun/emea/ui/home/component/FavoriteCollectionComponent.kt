@@ -96,6 +96,7 @@ fun FavoriteCollections(collections: List<MySootheCollection>, modifier: Modifie
 private fun CollectionCard(name: String, picture: Painter, modifier: Modifier = Modifier) {
     Card(
         modifier,
+        elevation = 0.dp,
         shape = MaterialTheme.shapes.small
     ) {
         Row(
