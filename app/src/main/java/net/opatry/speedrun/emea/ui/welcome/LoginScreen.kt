@@ -24,7 +24,6 @@ package net.opatry.speedrun.emea.ui.welcome
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -36,6 +35,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
@@ -53,82 +53,82 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import net.opatry.speedrun.emea.R
-import net.opatry.speedrun.emea.ui.welcome.component.WelcomeButton
 import net.opatry.speedrun.emea.ui.theme.MySootheTheme
 import net.opatry.speedrun.emea.ui.theme.mySootheTextFieldDefaults
 import net.opatry.speedrun.emea.ui.theme.typography
+import net.opatry.speedrun.emea.ui.welcome.component.WelcomeButton
 
 @Composable
 fun LoginScreen(onSignedIn: () -> Unit) {
-    Box(
-        Modifier
-            .background(MaterialTheme.colors.background)
-            .fillMaxSize(),
-        contentAlignment = Alignment.TopCenter
-    ) {
-        Image(
-            loginBackground(),
-            null,
+    Surface(color = MaterialTheme.colors.background) {
+        Box(
             Modifier.fillMaxSize(),
-            contentScale = ContentScale.FillBounds
-        )
-        Column(
-            Modifier.padding(horizontal = 16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+            contentAlignment = Alignment.TopCenter
         ) {
-            Text(
-                stringResource(R.string.login_login_title).toUpperCase(),
-                Modifier.paddingFromBaseline(top = 200.dp, bottom = 32.dp),
-                style = typography.h1
+            Image(
+                loginBackground(),
+                null,
+                Modifier.fillMaxSize(),
+                contentScale = ContentScale.FillBounds
             )
-
-            var email by remember { mutableStateOf("") }
-            TextField(
-                value = email,
-                onValueChange = { email = it },
-                Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 8.dp),
-                colors = mySootheTextFieldDefaults(),
-                placeholder = {
-                    // TODO replicate text style
-                    Text(stringResource(R.string.login_email_address))
-                }
-            )
-
-            var password by remember { mutableStateOf("") }
-            TextField(
-                value = password,
-                onValueChange = { password = it },
-                Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 8.dp),
-                colors = mySootheTextFieldDefaults(),
-                visualTransformation = PasswordVisualTransformation(),
-                placeholder = {
-                    // TODO replicate text style
-                    Text(stringResource(R.string.login_password))
-                }
-            )
-
-            WelcomeButton(onClick = onSignedIn) {
-                Text(stringResource(R.string.login_login).toUpperCase())
-            }
-            Row {
-                // FIXME should avoid having 2 strings
+            Column(
+                Modifier.padding(horizontal = 16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
                 Text(
-                    stringResource(R.string.login_no_account),
-                    Modifier.paddingFromBaseline(top = 32.dp),
-                    style = typography.body2
+                    stringResource(R.string.login_login_title).toUpperCase(),
+                    Modifier.paddingFromBaseline(top = 200.dp, bottom = 32.dp),
+                    style = typography.h1
                 )
-                Spacer(Modifier.width(8.dp))
-                // TODO clickable
-                Text(
-                    stringResource(R.string.login_signup),
-                    Modifier.paddingFromBaseline(top = 32.dp),
-                    style = typography.body2,
-                    textDecoration = TextDecoration.Underline
+
+                var email by remember { mutableStateOf("") }
+                TextField(
+                    value = email,
+                    onValueChange = { email = it },
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 8.dp),
+                    colors = mySootheTextFieldDefaults(),
+                    placeholder = {
+                        // TODO replicate text style
+                        Text(stringResource(R.string.login_email_address))
+                    }
                 )
+
+                var password by remember { mutableStateOf("") }
+                TextField(
+                    value = password,
+                    onValueChange = { password = it },
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 8.dp),
+                    colors = mySootheTextFieldDefaults(),
+                    visualTransformation = PasswordVisualTransformation(),
+                    placeholder = {
+                        // TODO replicate text style
+                        Text(stringResource(R.string.login_password))
+                    }
+                )
+
+                WelcomeButton(onClick = onSignedIn) {
+                    Text(stringResource(R.string.login_login).toUpperCase())
+                }
+                Row {
+                    // FIXME should avoid having 2 strings
+                    Text(
+                        stringResource(R.string.login_no_account),
+                        Modifier.paddingFromBaseline(top = 32.dp),
+                        style = typography.body2
+                    )
+                    Spacer(Modifier.width(8.dp))
+                    // TODO clickable
+                    Text(
+                        stringResource(R.string.login_signup),
+                        Modifier.paddingFromBaseline(top = 32.dp),
+                        style = typography.body2,
+                        textDecoration = TextDecoration.Underline
+                    )
+                }
             }
         }
     }
@@ -147,7 +147,9 @@ private fun loginBackground() = painterResource(
 @Composable
 private fun LoginLightPreview() {
     MySootheTheme {
-        LoginScreen {}
+        Surface(color = MaterialTheme.colors.background) {
+            LoginScreen {}
+        }
     }
 }
 
@@ -156,6 +158,8 @@ private fun LoginLightPreview() {
 @Composable
 private fun LoginDarkPreview() {
     MySootheTheme(darkTheme = true) {
-        LoginScreen {}
+        Surface(color = MaterialTheme.colors.background) {
+            LoginScreen {}
+        }
     }
 }

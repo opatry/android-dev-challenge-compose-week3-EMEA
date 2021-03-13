@@ -28,6 +28,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -59,37 +60,42 @@ import net.opatry.speedrun.emea.ui.theme.typography
 fun FavoriteCollections(collections: List<MySootheCollection>, modifier: Modifier = Modifier) {
     Column(Modifier.fillMaxWidth()) {
         SectionTitle(stringResource(R.string.favorite_collections), modifier)
-        // FIXME is it a single horizontal list or 2 separate list
-        // FIXME is it a 3x2 or 2x3?
-        // FIXME grid 3 cols
-        // LazyVerticalGrid(GridCells.Adaptive(200.dp),Modifier.fillMaxWidth()) {
+        // FIXME Using a grid?
+        // LazyVerticalGrid(GridCells.Adaptive(192.dp),Modifier.fillMaxWidth()) {
         //     items(collections) { collection ->
         //         CollectionCard(stringResource(collection.name), painterResource(collection.picture))
         //     }
         // }
-        val firstRow = collections.subList(0, collections.size / 2)
-        val secondRow = collections.subList(collections.size / 2, collections.size)
-
-        listOf(firstRow, secondRow).forEach { row ->
-            LazyRow(
-                Modifier.fillMaxWidth(),
-                contentPadding = PaddingValues(8.dp)
-            ) {
-                items(row) { collection ->
-                    CollectionCard(stringResource(collection.name), painterResource(collection.picture))
+        LazyRow(
+            Modifier.fillMaxWidth(),
+            contentPadding = PaddingValues(horizontal = 16.dp, vertical = 0.dp)
+        ) {
+            items(collections.chunked(2)) { column ->
+                val first = column.first()
+                val second = column.last()
+                Column {
+                    CollectionCard(
+                        stringResource(first.name),
+                        painterResource(first.picture),
+                        Modifier.width(192.dp).height(56.dp)
+                    )
+                    Spacer(Modifier.height(8.dp))
+                    CollectionCard(
+                        stringResource(second.name),
+                        painterResource(second.picture),
+                        Modifier.width(192.dp).height(56.dp)
+                    )
                 }
+                Spacer(Modifier.width(8.dp))
             }
         }
     }
 }
 
 @Composable
-private fun CollectionCard(name: String, picture: Painter) {
+private fun CollectionCard(name: String, picture: Painter, modifier: Modifier = Modifier) {
     Card(
-        Modifier
-            .padding(end = 8.dp)
-            .width(192.dp)
-            .height(56.dp),
+        modifier,
         shape = MaterialTheme.shapes.small
     ) {
         Row(
@@ -107,7 +113,8 @@ private fun CollectionCard(name: String, picture: Painter) {
             Text(
                 name,
                 Modifier.padding(4.dp),
-                style = typography.h3
+                style = typography.h3,
+                color = MaterialTheme.colors.onSurface
             )
         }
     }
@@ -118,7 +125,7 @@ private fun CollectionCard(name: String, picture: Painter) {
 @Composable
 fun CollectionsLightPreview() {
     MySootheTheme {
-        FavoriteCollections(mySootheCollections)
+        FavoriteCollections(mySootheCollections, Modifier.padding(horizontal = 16.dp))
     }
 }
 
@@ -127,6 +134,6 @@ fun CollectionsLightPreview() {
 @Composable
 fun CollectionsDarkPreview() {
     MySootheTheme(darkTheme = true) {
-        FavoriteCollections(mySootheCollections)
+        FavoriteCollections(mySootheCollections, Modifier.padding(horizontal = 16.dp))
     }
 }

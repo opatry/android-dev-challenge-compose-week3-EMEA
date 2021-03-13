@@ -22,28 +22,24 @@
 package net.opatry.speedrun.emea
 
 import android.os.Bundle
-import android.util.Config
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.booleanResource
 import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
 import net.opatry.speedrun.emea.ui.home.HomeScreen
+import net.opatry.speedrun.emea.ui.theme.MySootheTheme
 import net.opatry.speedrun.emea.ui.welcome.LoginScreen
 import net.opatry.speedrun.emea.ui.welcome.WelcomeScreen
-import net.opatry.speedrun.emea.ui.theme.MySootheTheme
 
 @ExperimentalFoundationApi
 class MainActivity : AppCompatActivity() {
@@ -70,21 +66,19 @@ enum class AppState {
 fun MySootheApp() {
     ProvideWindowInsets {
         MySootheTheme {
-            Surface(color = MaterialTheme.colors.background) {
-                val (appState, setAppState) = remember { mutableStateOf(AppState.OnBoarding) }
-                when (appState) {
-                    AppState.OnBoarding -> WelcomeScreen {
-                        setAppState(AppState.Login)
-                    }
-                    AppState.Login -> LoginScreen {
-                        setAppState(AppState.Home)
-                    }
-                    AppState.Home -> HomeScreen()
+            val (appState, setAppState) = remember { mutableStateOf(AppState.OnBoarding) }
+            when (appState) {
+                AppState.OnBoarding -> WelcomeScreen {
+                    setAppState(AppState.Login)
                 }
-                val showGrid = true // TODO booleanResource(id = R.bool.is_debug)
-                if (showGrid) {
-                    GridLayer()
+                AppState.Login -> LoginScreen {
+                    setAppState(AppState.Home)
                 }
+                AppState.Home -> HomeScreen()
+            }
+            val showGrid = true // TODO booleanResource(id = R.bool.is_debug)
+            if (showGrid) {
+                GridLayer()
             }
         }
     }

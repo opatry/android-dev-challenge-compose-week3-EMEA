@@ -55,8 +55,8 @@ import net.opatry.speedrun.emea.data.mySootheBodyActivities
 import net.opatry.speedrun.emea.data.mySootheCollections
 import net.opatry.speedrun.emea.data.mySootheMindActivities
 import net.opatry.speedrun.emea.ui.component.SearchComponent
-import net.opatry.speedrun.emea.ui.home.component.FavoriteCollections
 import net.opatry.speedrun.emea.ui.home.component.Activities
+import net.opatry.speedrun.emea.ui.home.component.FavoriteCollections
 import net.opatry.speedrun.emea.ui.theme.MySootheTheme
 
 private enum class HomeTabs(
@@ -70,10 +70,11 @@ private enum class HomeTabs(
 @ExperimentalFoundationApi
 @Composable
 fun HomeScreen() {
-
     val (selectedTab, setSelectedTab) = remember { mutableStateOf(HomeTabs.Home) }
     val tabs = HomeTabs.values()
+
     Scaffold(
+        backgroundColor = MaterialTheme.colors.background,
         topBar = {},
         floatingActionButton = {
             FloatingActionButton(

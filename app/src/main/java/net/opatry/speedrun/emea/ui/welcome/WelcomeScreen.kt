@@ -24,13 +24,13 @@ package net.opatry.speedrun.emea.ui.welcome
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -41,34 +41,34 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import net.opatry.speedrun.emea.R
-import net.opatry.speedrun.emea.ui.welcome.component.WelcomeButton
 import net.opatry.speedrun.emea.ui.theme.MySootheTheme
+import net.opatry.speedrun.emea.ui.welcome.component.WelcomeButton
 
 @Composable
 fun WelcomeScreen(onSignIn: () -> Unit) {
-    Box(
-        Modifier
-            .background(MaterialTheme.colors.background)
-            .fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Image(
-            welcomeBackground(),
-            null,
+    Surface(color = MaterialTheme.colors.background) {
+        Box(
             Modifier.fillMaxSize(),
-            contentScale = ContentScale.FillBounds
-        )
-        Column(
-            Modifier.padding(horizontal = 16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+            contentAlignment = Alignment.Center
         ) {
-            // AppTitle(stringResource(R.string.app_name), Modifier.padding(bottom = 32.dp))
-            Image(logo(), stringResource(R.string.app_name), Modifier.padding(bottom = 32.dp))
-            WelcomeButton(onClick = { }) {
-                Text(stringResource(R.string.welcome_signup).toUpperCase())
-            }
-            WelcomeButton(onClick = onSignIn, secondary = true) {
-                Text(stringResource(R.string.welcome_login).toUpperCase())
+            Image(
+                welcomeBackground(),
+                null,
+                Modifier.fillMaxSize(),
+                contentScale = ContentScale.FillBounds
+            )
+            Column(
+                Modifier.padding(horizontal = 16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                // AppTitle(stringResource(R.string.app_name), Modifier.padding(bottom = 32.dp))
+                Image(logo(), stringResource(R.string.app_name), Modifier.padding(bottom = 32.dp))
+                WelcomeButton(onClick = { }) {
+                    Text(stringResource(R.string.welcome_signup).toUpperCase())
+                }
+                WelcomeButton(onClick = onSignIn, secondary = true) {
+                    Text(stringResource(R.string.welcome_login).toUpperCase())
+                }
             }
         }
     }
