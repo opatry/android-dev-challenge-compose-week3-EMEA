@@ -21,18 +21,40 @@
   -->
 
 <resources>
-    <!--
-      Copyright 2020 The Android Open Source Project
-      Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
-      in compliance with the License. You may obtain a copy of the License at
-      http://www.apache.org/licenses/LICENSE-2.0
-      Unless required by applicable law or agreed to in writing, software distributed under the License
-      is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
-      or implied. See the License for the specific language governing permissions and limitations under
-      the License.
-      -->
     <string name="app_name">My Soothe</string>
     <string name="nav_home">Home</string>
     <string name="nav_run">Run</string>
     <string name="nav_profile">Profile</string>
+    <string name="short_mantras">Short mantras</string>
+    <string name="nature_meditations">Nature meditations</string>
+    <string name="stress_and_anxiety">Stress and anxiety</string>
+    <string name="self_massage">Self-massage</string>
+    <string name="overwhelmed">Overwhelmed</string>
+    <string name="nightly_wind_down">Nightly wind down</string>
+    <string name="inversions">Inversions</string>
+    <string name="quick_yoga">Quick yoga</string>
+    <string name="stretching">Stretching</string>
+    <string name="tabata">Tabata</string>
+    <string name="hiit">HIIT</string>
+    <string name="pre_natal_yoga">Pre-natal yoga</string>
+    <string name="meditate">Meditate</string>
+    <string name="with_kids">With kids</string>
+    <string name="aromatherapy">Aromatherapy</string>
+    <string name="on_the_go">On the go</string>
+    <string name="with_pets">With pets</string>
+    <string name="high_stress">High stress</string>
+    <string name="align_your_body">Align your body</string>
+    <string name="align_your_mind">Align your mind</string>
+    <string name="favorite_collections">Favorite collections</string>
+    <string name="search">Search</string>
+    <string name="start">Start</string>
+    <string name="welcome_signup">Sign up</string>
+    <string name="welcome_login">Log in</string>
+    <string name="login_email_address">Email address</string>
+    <string name="login_password">Password</string>
+    <string name="login_login">Log in</string>
+    <string name="login_no_account">Don\'t have an account?</string>
+    <string name="login_signup">Sign up</string>
+    <string name="login_login_title">Log in</string>
+
 </resources>

@@ -33,7 +33,7 @@ private val DarkColorPalette = darkColors(
     secondary = Rust300,
     background = Gray900,
     surface = White150,
-    onPrimary = Color.White,
+    onPrimary = Gray900,
     onSecondary = Color.Black,
     onBackground = Taupe100,
     onSurface = White800,
@@ -51,7 +51,7 @@ private val LightColorPalette = lightColors(
 )
 
 @Composable
-fun MyTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
+fun MySootheTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
     val colors = if (darkTheme) {
         DarkColorPalette
     } else {

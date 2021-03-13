@@ -48,8 +48,8 @@ val typography = Typography(
         letterSpacing = 1.15.sp,
     ),
     h2 = TextStyle(
-        fontFamily = Lato,
-        fontWeight = FontWeight.Bold,
+        fontFamily = KulimPark,
+        fontWeight = FontWeight.Light,
         fontSize = 15.sp,
         letterSpacing = 1.15.sp,
         // TODO CAPS ??

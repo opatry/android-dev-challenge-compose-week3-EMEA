@@ -44,3 +44,4 @@ proguard-project.txt
 .idea/inspectionProfiles/profiles_settings.xml
 .idea/inspectionProfiles/ktlint.xml
 .idea/modules.xml
+.idea/inspectionProfiles/Project_Default.xml

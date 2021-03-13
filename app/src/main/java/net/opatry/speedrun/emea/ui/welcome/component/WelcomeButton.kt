@@ -19,22 +19,39 @@
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package net.opatry.speedrun.emea.ui.theme
 
+package net.opatry.speedrun.emea.ui.welcome.component
+
+import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.TextFieldDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
-
-val Gray900 = Color(0xFF333333)
-val Gray800 = Gray900.copy(alpha = .8f)
-val Rust600 = Color(0xFF886363)
-val Rust300 = Color(0xFFE1AFAF)
-val Taupe100 = Color(0xFFF0EAE2)
-val Taupe800 = Color(0xFF655454)
-val White150 = Color.White.copy(alpha = .15f)
-val White800 = Color.White.copy(alpha = .8f)
-val White850 = Color.White.copy(alpha = .85f)
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 
 @Composable
-fun mySootheTextFieldDefaults() = TextFieldDefaults.textFieldColors(backgroundColor = MaterialTheme.colors.surface)
+fun WelcomeButton(
+    onClick: () -> Unit,
+    secondary: Boolean = false,
+    content: @Composable RowScope.() -> Unit
+) {
+    val buttonColor = when {
+        secondary -> MaterialTheme.colors.secondary
+        else -> MaterialTheme.colors.primary
+    }
+    Button(
+        onClick = onClick,
+        Modifier
+            .fillMaxWidth()
+            .padding(bottom = 8.dp)
+            .height(72.dp),
+        shape = MaterialTheme.shapes.medium,
+        elevation = ButtonDefaults.elevation(0.dp),
+        colors = ButtonDefaults.buttonColors(backgroundColor = buttonColor),
+        content = content
+    )
+}

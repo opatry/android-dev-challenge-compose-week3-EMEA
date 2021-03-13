@@ -22,9 +22,12 @@
 
 package net.opatry.speedrun.emea.model
 
-data class Collection(val name: String, val pictureUrl: String)
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 
-sealed class MySootheActivity(val name: String, val pictureUrl: String) {
-    class BodyActivity(name: String, pictureUrl: String) : MySootheActivity(name, pictureUrl)
-    class MindActivity(name: String, pictureUrl: String) : MySootheActivity(name, pictureUrl)
+data class MySootheCollection(@StringRes val name: Int, @DrawableRes val picture: Int)
+
+sealed class MySootheActivity(@StringRes val name: Int, @DrawableRes val picture: Int) {
+    class BodyActivity(@StringRes name: Int, @DrawableRes picture: Int) : MySootheActivity(name, picture)
+    class MindActivity(@StringRes name: Int, @DrawableRes picture: Int) : MySootheActivity(name, picture)
 }

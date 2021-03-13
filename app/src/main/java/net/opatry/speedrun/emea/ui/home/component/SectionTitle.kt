@@ -19,22 +19,35 @@
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package net.opatry.speedrun.emea.ui.theme
 
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.TextFieldDefaults
+package net.opatry.speedrun.emea.ui.home.component
+
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.paddingFromBaseline
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
-
-val Gray900 = Color(0xFF333333)
-val Gray800 = Gray900.copy(alpha = .8f)
-val Rust600 = Color(0xFF886363)
-val Rust300 = Color(0xFFE1AFAF)
-val Taupe100 = Color(0xFFF0EAE2)
-val Taupe800 = Color(0xFF655454)
-val White150 = Color.White.copy(alpha = .15f)
-val White800 = Color.White.copy(alpha = .8f)
-val White850 = Color.White.copy(alpha = .85f)
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import net.opatry.speedrun.emea.R
+import net.opatry.speedrun.emea.ui.theme.typography
 
 @Composable
-fun mySootheTextFieldDefaults() = TextFieldDefaults.textFieldColors(backgroundColor = MaterialTheme.colors.surface)
+fun SectionTitle(title: String, modifier: Modifier = Modifier) {
+    Text(
+        title.toUpperCase(),
+        Modifier
+            .fillMaxWidth()
+            .paddingFromBaseline(top = 40.dp, bottom = 8.dp)
+            .then(modifier),
+        style = typography.h2
+    )
+}
+
+@Preview("Light Theme", widthDp = 360, heightDp = 640)
+@Composable
+private fun SectionTitleLightPreview() {
+    SectionTitle(stringResource(R.string.align_your_body), Modifier.padding(horizontal = 16.dp))
+}
