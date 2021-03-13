@@ -89,8 +89,9 @@ fun ActivityComponent(name: String, picture: Painter) {
                 role = Role.Button,
                 interactionSource = remember { MutableInteractionSource() },
                 indication = rememberRipple(bounded = false)
-            ) {  },
-        horizontalAlignment = Alignment.CenterHorizontally) {
+            ) { },
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
         Image(
             picture,
             null,
@@ -98,7 +99,7 @@ fun ActivityComponent(name: String, picture: Painter) {
                 .width(88.dp)
                 .aspectRatio(1f)
                 .clip(CircleShape),
-                contentScale = ContentScale.FillBounds
+            contentScale = ContentScale.FillBounds
         )
         Text(
             name,

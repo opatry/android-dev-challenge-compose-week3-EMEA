@@ -102,11 +102,13 @@ fun HomeScreen() {
             ) {
                 tabs.forEach { navItem ->
                     BottomNavigationItem(
-                        icon = { Icon(
-                            navItem.icon,
-                            null,
-                            Modifier.size(18.dp) //.navigationBarsPadding()
-                        ) },
+                        icon = {
+                            Icon(
+                                navItem.icon,
+                                null,
+                                Modifier.size(18.dp) //.navigationBarsPadding()
+                            )
+                        },
                         label = { Text(stringResource(navItem.titleRes).toUpperCase()) },
                         selected = selectedTab == navItem,
                         selectedContentColor = MaterialTheme.colors.onBackground,
@@ -118,13 +120,7 @@ fun HomeScreen() {
             }
         }
     ) { contentPadding ->
-        Column(
-            Modifier
-                .verticalScroll(rememberScrollState())
-                // FIXME should be managed by status bar transparent management
-                //.padding(contentPadding)
-                //.padding(horizontal = 16.dp, vertical = 36.dp)
-        ) {
+        Column(Modifier.verticalScroll(rememberScrollState())) {
             SearchComponent(Modifier.padding(top = 56.dp, start = 16.dp, end = 16.dp))
             FavoriteCollections(
                 mySootheCollections,

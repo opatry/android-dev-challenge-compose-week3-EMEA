@@ -36,8 +36,14 @@ val mySootheCollections = listOf(
 )
 
 val mySootheBodyActivities = listOf(
-    MySootheActivity.BodyActivity(R.string.inversions, R.drawable.pexels_chevanon_photography_317157),
-    MySootheActivity.BodyActivity(R.string.quick_yoga, R.drawable.pexels_agung_pandit_wiguna_1812964),
+    MySootheActivity.BodyActivity(
+        R.string.inversions,
+        R.drawable.pexels_chevanon_photography_317157
+    ),
+    MySootheActivity.BodyActivity(
+        R.string.quick_yoga,
+        R.drawable.pexels_agung_pandit_wiguna_1812964
+    ),
     MySootheActivity.BodyActivity(R.string.stretching, R.drawable.pexels_cliff_booth_4056723),
     MySootheActivity.BodyActivity(R.string.tabata, R.drawable.pexels_elly_fairytale_4662438),
     MySootheActivity.BodyActivity(R.string.hiit, R.drawable.pexels_the_lazy_artist_gallery_999309),
@@ -47,7 +53,10 @@ val mySootheBodyActivities = listOf(
 val mySootheMindActivities = listOf(
     MySootheActivity.MindActivity(R.string.meditate, R.drawable.pexels_elly_fairytale_3822622),
     MySootheActivity.MindActivity(R.string.with_kids, R.drawable.pexels_valeria_ushakova_3094230),
-    MySootheActivity.MindActivity(R.string.aromatherapy, R.drawable.pexels_karolina_grabowska_4498318),
+    MySootheActivity.MindActivity(
+        R.string.aromatherapy,
+        R.drawable.pexels_karolina_grabowska_4498318
+    ),
     MySootheActivity.MindActivity(R.string.on_the_go, R.drawable.pexels_suraphat_nueaon_1241348),
     MySootheActivity.MindActivity(R.string.with_pets, R.drawable.pexels_cottonbro_4056535),
     MySootheActivity.MindActivity(R.string.high_stress, R.drawable.pexels_nathan_cowley_897817),

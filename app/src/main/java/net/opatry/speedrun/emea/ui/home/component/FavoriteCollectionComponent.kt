@@ -77,13 +77,17 @@ fun FavoriteCollections(collections: List<MySootheCollection>, modifier: Modifie
                     CollectionCard(
                         stringResource(first.name),
                         painterResource(first.picture),
-                        Modifier.width(192.dp).height(56.dp)
+                        Modifier
+                            .width(192.dp)
+                            .height(56.dp)
                     )
                     Spacer(Modifier.height(8.dp))
                     CollectionCard(
                         stringResource(second.name),
                         painterResource(second.picture),
-                        Modifier.width(192.dp).height(56.dp)
+                        Modifier
+                            .width(192.dp)
+                            .height(56.dp)
                     )
                 }
                 Spacer(Modifier.width(8.dp))

@@ -37,4 +37,5 @@ val White800 = Color.White.copy(alpha = .8f)
 val White850 = Color.White.copy(alpha = .85f)
 
 @Composable
-fun mySootheTextFieldDefaults() = TextFieldDefaults.textFieldColors(backgroundColor = MaterialTheme.colors.surface)
+fun mySootheTextFieldDefaults() =
+    TextFieldDefaults.textFieldColors(backgroundColor = MaterialTheme.colors.surface)

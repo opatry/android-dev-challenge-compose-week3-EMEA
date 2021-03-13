@@ -28,6 +28,9 @@ import androidx.annotation.StringRes
 data class MySootheCollection(@StringRes val name: Int, @DrawableRes val picture: Int)
 
 sealed class MySootheActivity(@StringRes val name: Int, @DrawableRes val picture: Int) {
-    class BodyActivity(@StringRes name: Int, @DrawableRes picture: Int) : MySootheActivity(name, picture)
-    class MindActivity(@StringRes name: Int, @DrawableRes picture: Int) : MySootheActivity(name, picture)
+    class BodyActivity(@StringRes name: Int, @DrawableRes picture: Int) :
+        MySootheActivity(name, picture)
+
+    class MindActivity(@StringRes name: Int, @DrawableRes picture: Int) :
+        MySootheActivity(name, picture)
 }
