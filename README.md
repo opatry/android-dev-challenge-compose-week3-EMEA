@@ -4,19 +4,23 @@
 
 ## :scroll: Description
 
+Implement the _My Soothe_ mockup provided for [EMEA friendly area](https://github.com/android/android-dev-challenge-compose/blob/assets/MySoothe.zip).
+
 ## :bulb: Motivation and Context
+
+Apply theming and metrics described in the linked `MySoothe.pdf` document.
 
 ## :camera_flash: Screenshots
 
 ### 🌞 Light Mode
-Active timer | Timers
---- | --- |
-<img src="results/screenshot_1.png" width="260"> | <img src="results/screenshot_2.png" width="260">
+Welcome | Log in | Home
+--- | --- | --- |
+<img src="/results/screenshot_1.png" width="260"> | <img src="/results/screenshot_2.png" width="260"> | <img src="/results/screenshot_3.png" width="260">
 
 ### 🌚 Dark Mode
-Active timer | Timers
---- | --- |
-<img src="results/screenshot_1_dark.png" width="260"> | <img src="results/screenshot_2_dark.png" width="260">
+Welcome | Log in | Home
+--- | --- | --- |
+<img src="/results/screenshot_1_dark.png" width="260"> | <img src="/results/screenshot_2_dark.png" width="260"> | <img src="/results/screenshot_3_dark.png" width="260">
 
 ## License
 ```
