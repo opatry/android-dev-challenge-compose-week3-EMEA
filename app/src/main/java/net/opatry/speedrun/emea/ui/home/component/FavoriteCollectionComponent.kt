@@ -112,7 +112,7 @@ private fun CollectionCard(name: String, picture: Painter, modifier: Modifier = 
             )
             Text(
                 name,
-                Modifier.padding(4.dp),
+                Modifier.padding(horizontal = 16.dp),
                 style = typography.h3,
                 color = MaterialTheme.colors.onSurface
             )

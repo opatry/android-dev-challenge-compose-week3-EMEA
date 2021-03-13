@@ -130,11 +130,13 @@ fun HomeScreen() {
                 mySootheCollections,
                 Modifier.padding(horizontal = 16.dp)
             )
+            Spacer(Modifier.height(8.dp))
             Activities(
                 stringResource(R.string.align_your_body),
                 mySootheBodyActivities,
                 Modifier.padding(horizontal = 16.dp)
             )
+            Spacer(Modifier.height(8.dp))
             Activities(
                 stringResource(R.string.align_your_mind),
                 mySootheMindActivities,
