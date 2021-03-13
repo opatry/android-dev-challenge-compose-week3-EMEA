@@ -19,7 +19,6 @@
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-
 package net.opatry.speedrun.emea.ui.component
 
 import androidx.compose.foundation.layout.Box
@@ -49,7 +48,8 @@ import net.opatry.speedrun.emea.R
 @Composable
 fun SearchComponent(modifier: Modifier = Modifier) {
     var query by remember { mutableStateOf("") }
-    TextField(value = query,
+    TextField(
+        value = query,
         onValueChange = { query = it },
         modifier.fillMaxWidth(),
         maxLines = 1,
@@ -69,7 +69,8 @@ fun SearchComponent(modifier: Modifier = Modifier) {
                 // TODO replicate text style
                 Text(stringResource(R.string.search), style = LocalTextStyle.current)
             }
-        })
+        }
+    )
 }
 
 @Preview("Light Theme", widthDp = 360, heightDp = 640)

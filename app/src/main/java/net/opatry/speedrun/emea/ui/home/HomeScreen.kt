@@ -19,7 +19,6 @@
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-
 package net.opatry.speedrun.emea.ui.home
 
 import androidx.annotation.StringRes
@@ -106,7 +105,7 @@ fun HomeScreen() {
                             Icon(
                                 navItem.icon,
                                 null,
-                                Modifier.size(18.dp) //.navigationBarsPadding()
+                                Modifier.size(18.dp) // .navigationBarsPadding()
                             )
                         },
                         label = { Text(stringResource(navItem.titleRes).toUpperCase()) },
