@@ -1,4 +1,4 @@
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   Copyright (c) 2021 Olivier Patry
 
   Permission is hereby granted, free of charge, to any person obtaining
@@ -20,9 +20,7 @@
   OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   -->
 
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.MySoothe" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="android:statusBarColor" tools:targetApi="l">@android:color/transparent</item>
-        <item name="android:windowTranslucentStatus">true</item>
-    </style>
+<resources>
+    <color name="immersive_sys_ui">#00000000</color>
+    <color name="nav_bar">@color/immersive_sys_ui</color>
 </resources>

@@ -25,6 +25,8 @@ package net.opatry.speedrun.emea.ui.home
 import androidx.annotation.StringRes
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
@@ -50,6 +52,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import dev.chrisbanes.accompanist.insets.navigationBarsHeight
+import dev.chrisbanes.accompanist.insets.navigationBarsPadding
 import net.opatry.speedrun.emea.R
 import net.opatry.speedrun.emea.data.mySootheBodyActivities
 import net.opatry.speedrun.emea.data.mySootheCollections
@@ -92,6 +96,7 @@ fun HomeScreen() {
         isFloatingActionButtonDocked = true,
         bottomBar = {
             BottomNavigation(
+                Modifier.navigationBarsHeight(additional = 56.dp),
                 backgroundColor = MaterialTheme.colors.background,
                 elevation = 8.dp
             ) {
@@ -106,6 +111,7 @@ fun HomeScreen() {
                         selected = selectedTab == navItem,
                         selectedContentColor = MaterialTheme.colors.onBackground,
                         unselectedContentColor = MaterialTheme.colors.onBackground.copy(alpha = ContentAlpha.medium),
+                        modifier = Modifier.navigationBarsPadding(),
                         onClick = { /*setSelectedTab(navItem)*/ }
                     )
                 }

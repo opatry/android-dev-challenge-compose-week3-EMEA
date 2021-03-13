@@ -1,4 +1,4 @@
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   Copyright (c) 2021 Olivier Patry
 
   Permission is hereby granted, free of charge, to any person obtaining
@@ -20,12 +20,6 @@
   OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   -->
 
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.MySoothe" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:colorPrimary">#ff00ff</item>
-        <item name="android:colorAccent">#ff00ff</item>
-        <item name="android:statusBarColor">@color/immersive_sys_ui</item>
-        <item name="android:navigationBarColor">@color/nav_bar</item>
-        <item name="android:windowLightStatusBar">@bool/light_status_bar</item>
-    </style>
+<resources>
+    <bool name="light_status_bar">true</bool>
 </resources>
