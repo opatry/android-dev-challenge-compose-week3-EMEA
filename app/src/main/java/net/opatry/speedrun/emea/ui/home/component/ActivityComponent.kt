@@ -81,7 +81,6 @@ fun Activities(
 @Composable
 fun ActivityComponent(name: String, picture: Painter) {
     Column(
-        // TODO circle ripple
         Modifier
             .clickable(
                 enabled = true,
