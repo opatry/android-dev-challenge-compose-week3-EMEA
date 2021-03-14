@@ -27,12 +27,10 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
-import androidx.compose.foundation.layout.width
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -47,8 +45,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import net.opatry.speedrun.emea.R
@@ -113,19 +114,21 @@ fun LoginScreen(onSignedIn: () -> Unit) {
                     Text(stringResource(R.string.login_login).toUpperCase())
                 }
                 Row {
-                    // FIXME should avoid having 2 strings
                     Text(
-                        stringResource(R.string.login_no_account),
-                        Modifier.paddingFromBaseline(top = 32.dp),
+                        // FIXME This isn't scalable at all. We should manage this using localized strings
+                        //  Maybe having 2 strings like that and then another one "%s %s"
+                        //  to put first and second part to allow more flexibility with translations
+                        buildAnnotatedString {
+                            append(stringResource(R.string.login_no_account))
+                            // attach a string annotation that stores a URL to the text "link"
+                            append(" ") // FIXME depends on language
+                            withStyle(SpanStyle(textDecoration = TextDecoration.Underline)) {
+                                // TODO clickable + click handler
+                                append(stringResource(R.string.login_signup))
+                            }
+
+                        },
                         style = typography.body2
-                    )
-                    Spacer(Modifier.width(8.dp))
-                    // TODO clickable
-                    Text(
-                        stringResource(R.string.login_signup),
-                        Modifier.paddingFromBaseline(top = 32.dp),
-                        style = typography.body2,
-                        textDecoration = TextDecoration.Underline
                     )
                 }
             }
